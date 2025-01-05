@@ -13,10 +13,10 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: '_TITLE_',
-  description: '_DESCRIPTION_',
+  title: 'Tutor',
+  description: 'App',
   manifest: '/site.webmanifest',
-  // TODO: Add Open Graph metadata
+  
 };
 
 const RootLayout: FunctionComponent<PropsWithChildren> = ({ children }) => {
