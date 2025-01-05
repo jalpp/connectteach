@@ -46,7 +46,7 @@ const Homepage: React.FC = () => {
           {[
             { title: 'Biology', description: 'Discover the wonders of life and living organisms.', url: 'bio' },
             { title: 'Chemistry', description: 'Explore the science of matter and its interactions.', url: 'chem' },
-            { title: 'Physics', description: 'Understand the laws that govern the universe.', url: 'phy' },
+            { title: 'Math', description: 'Understand the laws that govern the universe by math', url: 'math' },
             { title: 'Psychology', description: 'Dive into the study of mind and behavior.', url: 'psy' },
           ].map((subject, index) => (
             <Grid item xs={12} sm={6} md={3} key={index}>

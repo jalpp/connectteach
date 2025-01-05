@@ -24,10 +24,10 @@ const courses: Course[] = [
   },
 ];
 
-const PhyCoursesPage: React.FC = () => {
+const MathCoursesPage: React.FC = () => {
   return (
-    <SubjectCoursesPage courses={courses} subject='Physics'/>
+    <SubjectCoursesPage courses={courses} subject='Math'/>
   );
 };
 
-export default PhyCoursesPage;
+export default MathCoursesPage;
