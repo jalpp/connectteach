@@ -8,13 +8,13 @@ import LoginForm from './LoginForm';
 const LoginPage: NextPage = () => {
   return (
     <>
-      <LoginForm />
+      <LoginForm stage='Sign In'/>
     </>
   );
 };
 
 export const metadata: Metadata = {
-  title: 'Login - _TITLE_',
+  title: 'Tutor App Login',
   description: '_DESCRIPTION_',
 };
 

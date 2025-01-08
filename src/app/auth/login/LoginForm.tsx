@@ -1,47 +1,96 @@
 'use client';
-import { Stack } from '@mui/material';
+import React, { useState } from 'react';
+import {
+  Box,
+  Stack,
+  Typography,
+  FormControl,
+  RadioGroup,
+  FormControlLabel,
+  Radio,
+  Button,
+  TextField,
+} from '@mui/material';
 import { useRouter } from 'next/navigation';
-import { AppButton, AppLink } from '@/components';
-import { useAppStore } from '@/store';
-import { useEventLogout } from '@/hooks';
-import { sessionStorageSet } from '@/utils';
 
-/**
- * Renders login form for user to authenticate
- * @component LoginForm
- */
-const LoginForm = () => {
+interface LoginOptions {
+  stage: string;
+}
+
+ const StageForm: React.FC<LoginOptions> = ({stage}) => {
+  const [role, setRole] = useState('Student'); // Default to Student role
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const router = useRouter();
-  const [, dispatch] = useAppStore();
-  const onLogout = useEventLogout();
 
-  const onLogin = () => {
-    // TODO: AUTH: Sample of access token store, replace next line in real application
-    sessionStorageSet('access_token', 'TODO:_save-real-access-token-here');
+  const handleSignup = () => {
+    // TODO: Implement signup logic here (e.g., API call)
+    console.log('Signing up:', { name, email, password, role });
 
-    dispatch({ type: 'LOG_IN' });
-    router.replace('/'); // Redirect to home page without ability to go back
+    // Redirect after signup
+    router.replace('/');
   };
 
   return (
-    <Stack alignItems="center" spacing={2} padding={2}>
-      <Stack>Put form controls or add social login buttons here...</Stack>
+    <Box sx={{ maxWidth: 700, margin: 'auto', padding: 4, textAlign: 'center' }}>
+      <Typography variant="h4" gutterBottom>
+        {stage}
+      </Typography>
 
-      <Stack direction="row">
-        <AppButton color="success" onClick={onLogin}>
-          Emulate User Login
-        </AppButton>
-        <AppButton color="warning" onClick={onLogout}>
-          Logout User
-        </AppButton>
+      <Stack spacing={2}>
+        <TextField
+          label="Name"
+          variant="outlined"
+          fullWidth
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+        />
+
+        <TextField
+          label="Email"
+          type="email"
+          variant="outlined"
+          fullWidth
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
+
+        <TextField
+          label="Password"
+          type="password"
+          variant="outlined"
+          fullWidth
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
+
+        <FormControl>
+          <Typography variant="h6" gutterBottom>
+            Select Role
+          </Typography>
+          <RadioGroup
+            value={role}
+            onChange={(e) => setRole(e.target.value)}
+          >
+            <FormControlLabel value="Student" control={<Radio />} label="Student" />
+            <FormControlLabel value="Tutor" control={<Radio />} label="Tutor" />
+            <FormControlLabel value="Notemaker" control={<Radio />} label="Notemaker" />
+            <FormControlLabel value="Testmaker" control={<Radio />} label="Testmaker" />
+          </RadioGroup>
+        </FormControl>
+
+        <Button
+          variant="contained"
+          color="primary"
+          fullWidth
+          onClick={handleSignup}
+        >
+          Sign Up
+        </Button>
       </Stack>
-
-      <div>
-        The source code is available at{' '}
-        <AppLink href="https://github.com/karpolan/nextjs-mui-starter-ts">GitHub</AppLink>
-      </div>
-    </Stack>
+    </Box>
   );
 };
 
-export default LoginForm;
+export default StageForm;

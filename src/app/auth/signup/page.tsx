@@ -1,9 +1,21 @@
 import { Metadata } from 'next';
-import LoginPage from '../login/page';
+import StageForm from '../login/LoginForm';
 
 export const metadata: Metadata = {
-  title: 'Signup - _TITLE_',
+  title: 'Tutor App Signup',
   description: '_DESCRIPTION_',
 };
 
-export default LoginPage; // Just reuse a Login page as a demo...
+/**
+ * User LogUp page
+ * @page Login
+ */
+const LogUpPage = () => {
+  return (
+    <>
+      <StageForm stage='Sign Up'/>
+    </>
+  );
+};
+
+export default LogUpPage; 

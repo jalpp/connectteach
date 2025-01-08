@@ -1,5 +1,5 @@
 // SVG assets
-import PencilIcon from './icons/PencilIcon';
+
 // MUI Icons
 import DefaultIcon from '@mui/icons-material/MoreHoriz';
 import SettingsIcon from '@mui/icons-material/Settings';
@@ -35,7 +35,7 @@ export type IconName = keyof typeof ICONS;
  */
 export const ICONS /* Note: Setting type disables property autocomplete :( was - : Record<string, ComponentType> */ = {
   default: DefaultIcon,
-  logo: PencilIcon,
+  logo: MenuIcon,
   close: CloseIcon,
   menu: MenuIcon,
   settings: SettingsIcon,

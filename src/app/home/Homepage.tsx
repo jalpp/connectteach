@@ -39,7 +39,7 @@ const Homepage: React.FC = () => {
 
       {/* Subjects Section */}
       <Box sx={{ marginTop: 6 }}>
-        <Typography variant="h4" gutterBottom>
+        <Typography variant="h4" gutterBottom textAlign={'center'}>
           Subjects We Offer
         </Typography>
         <Grid container spacing={4}>
@@ -66,17 +66,7 @@ const Homepage: React.FC = () => {
             </Grid>
           ))}
         </Grid>
-      </Box>
-
-      {/* Call to Action Section */}
-      <Box sx={{ textAlign: 'center', marginTop: 6 }}>
-        <Typography variant="h5" gutterBottom>
-          Ready to get started?
-        </Typography>
-        <Button variant="contained" color="primary" size="large" href="/signup">
-          Sign Up Now
-        </Button>
-      </Box>
+      </Box>     
     </Box>
   );
 };

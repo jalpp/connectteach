@@ -25,8 +25,8 @@ const SIDE_BAR_ITEMS: Array<LinkToPage> = [
     icon: 'signup',
   },
   {
-    title: 'About',
-    path: '/about',
+    title: 'Home',
+    path: '/',
     icon: 'info',
   },
 ];
