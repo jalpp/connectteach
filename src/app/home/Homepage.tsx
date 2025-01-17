@@ -1,13 +1,18 @@
 import React from 'react';
-import { Box, Typography, Button, Grid, Card, CardContent } from '@mui/material';
+import { Box, Typography, Button, Grid, Card, CardContent, Avatar } from '@mui/material';
 
 const Homepage: React.FC = () => {
   return (
     <Box sx={{ padding: 4 }}>
       {/* Header Section */}
       <Box sx={{ textAlign: 'center', marginBottom: 4 }}>
-        <Typography variant="h2" gutterBottom>
-          Welcome to TutorApp
+        <Avatar
+          alt="C.O.R.E Logo"
+          src="/core.webp" // Replace with the actual path to your logo image
+          sx={{ width: 100, height: 100, margin: '0 auto 16px' }}
+        />
+        <Typography variant="h5" gutterBottom>
+          Welcome to C.O.R.E Community Of Rising Educators 
         </Typography>
         <Typography variant="h6" color="textSecondary">
           Empowering students and educators to achieve excellence
@@ -59,8 +64,8 @@ const Homepage: React.FC = () => {
                     {subject.description}
                   </Typography>
                   <Button variant="contained" color="success" size="medium" href={'/subject/' + subject.url}>
-          View Courses
-        </Button>
+                    View Courses
+                  </Button>
                 </CardContent>
               </Card>
             </Grid>

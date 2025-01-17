@@ -3,8 +3,8 @@ import { Stack, Typography } from '@mui/material';
 import Homepage from './Homepage';
 
 export const metadata: Metadata = {
-  title: 'Connect',
-  description: 'Teach',
+  title: 'Core',
+  description: 'C.O.R.E Club',
 };
 
 /**
