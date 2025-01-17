@@ -29,6 +29,11 @@ const SIDE_BAR_ITEMS: Array<LinkToPage> = [
     path: '/',
     icon: 'info',
   },
+  {
+    title: 'About',
+    path: '/about',
+    icon: 'info'
+  }
 ];
 
 // Add debug links

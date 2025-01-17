@@ -8,7 +8,7 @@ const Homepage: React.FC = () => {
       <Box sx={{ textAlign: 'center', marginBottom: 4 }}>
         <Avatar
           alt="C.O.R.E Logo"
-          src="/core.webp" // Replace with the actual path to your logo image
+          src="/core.webp" 
           sx={{ width: 100, height: 100, margin: '0 auto 16px' }}
         />
         <Typography variant="h5" gutterBottom>

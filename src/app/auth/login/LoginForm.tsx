@@ -18,7 +18,8 @@ interface LoginOptions {
 }
 
  const StageForm: React.FC<LoginOptions> = ({stage}) => {
-  const [role, setRole] = useState('Student'); // Default to Student role
+  const [role, setRole] = useState('Student'); 
+  const [course, setCourse] = useState('Chem');
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -77,6 +78,22 @@ interface LoginOptions {
             <FormControlLabel value="Tutor" control={<Radio />} label="Tutor" />
             <FormControlLabel value="Notemaker" control={<Radio />} label="Notemaker" />
             <FormControlLabel value="Testmaker" control={<Radio />} label="Testmaker" />
+          </RadioGroup>
+        </FormControl>
+
+        <FormControl>
+          <Typography variant="h6" gutterBottom>
+            Select Course
+          </Typography>
+          <RadioGroup
+            value={course}
+            
+            onChange={(e) => setCourse(e.target.value)}
+          >
+            <FormControlLabel value="Student" control={<Radio />} label="Chem" />
+            <FormControlLabel value="Tutor" control={<Radio />} label="Math" />
+            <FormControlLabel value="Notemaker" control={<Radio />} label="Bio" />
+            <FormControlLabel value="Testmaker" control={<Radio />} label="Psyh" />
           </RadioGroup>
         </FormControl>
 
